@@ -3,4 +3,16 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'index.html')
+    receitas = {
+        1:'Lasanha',
+        2:'Sopa',
+        3:'Sorvete ',
+        4:'Bolo'
+    }
+    dados = {
+        'nome_das_receitas': receitas
+    }
+    return render(request, 'index.html', dados)
+
+def receita(request):
+    return render(request, 'receita.html')
